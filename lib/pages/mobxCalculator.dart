@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:stateapp/mobxManager/calcController.dart';
 
+/// UI para o MObx
+
 class MobxCalculator extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -11,6 +13,7 @@ class MobxCalculator extends StatefulWidget {
 }
 
 class _MobxCalculator extends State<MobxCalculator> {
+//  instanciar o nosso Mobx controller
   final calcController = CalcController();
 
   @override
@@ -40,6 +43,10 @@ class _MobxCalculator extends State<MobxCalculator> {
                     child: TextField(
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(labelText: "Valor 2"),
+
+//                      para acessar as acoes do mobx não é necesário nenhum widget especial
+//                     são acessados normalmente
+
                       onChanged: calcController.actualizarValor2,
                     )),
               ],
@@ -47,6 +54,7 @@ class _MobxCalculator extends State<MobxCalculator> {
             SizedBox(
               height: 15,
             ),
+//            Para ter acesso aos dados sempre que estiverem em mudança é usado um observer que fica sempre a escutar
             Observer(builder: (_) {
               return Text(
                 '${calcController.resultado}',

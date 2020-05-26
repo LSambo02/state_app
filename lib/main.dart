@@ -18,15 +18,24 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-
+  // O Store é de onde podemos recuperar e aceder ao estado
+  // actual da aplicação e alterá-lo
   final Store<AppState> store;
 
   MyApp({this.store});
   @override
   Widget build(BuildContext context) {
+//    O ChangeNotifierProvider assume a mudança quando o notifyListeners é
+//     acionado, e só recebe quem tiver subscrito com um consumer
+//    Podia ter sido usado também um MultiProvider, caso tivesse mas de um
+//    provider para diferentes propositos
     return ChangeNotifierProvider<CounterProvider>(
       create: (context) => CounterProvider(),
+//      Tudo em flutter é widget
+//    Para que os widgets tenham acesso ao Store faz-se um "wrap"
+//    com o StoreProvider que é um widget que deve estar acima do MaterialApp,
+//    para que as mudanças abranjam toda a widget tree
+
       child: StoreProvider<AppState>(
         store: store,
         child: MaterialApp(
@@ -54,6 +63,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+//   O consumer permite ao builder como diz o nome consumir os dados do Provider
+
     return Consumer<CounterProvider>(
       builder: (context, _counterProvider, child) {
         return Scaffold(
@@ -77,6 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     IconButton(
                         icon: Icon(Icons.remove),
                         onPressed: () {
+//                         A partir do builder é subscrito o respectivo
+//                         Provider e é obtida sua instância e dado/função específica
                           _counterProvider.subtract();
                         }),
                     Column(

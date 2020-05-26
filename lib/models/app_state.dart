@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+//classe que representa o estado de nossa aplicação,
+///Redux
+
 class AppState {
   double sliderFontSize;
   bool bold;
