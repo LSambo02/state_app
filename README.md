@@ -1,16 +1,15 @@
 # stateapp
 
-A new Flutter application.
+Projecto com intuito de explicar conceitos de gerenciamento de estado, a partir de exemplos de Provider, Redux e Mobx. O setState e o BloC são devidamente referenciados nos artigos relacionados a este tema,no medium (lsambo02).
 
-## Getting Started
+##Screenshots
+![First Page](screenshoots/Screenshot_1590501881.png)
+![Second Page](screenshoots/Screenshot_1590501886.png)
+![Calculadora Mobx](screenshoots/Screenshot_1590501881.png)
+![Settings](screenshoots/Screenshot_1590501889.png)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Social media
+[Twitter](https://twitter.com/lsambo02)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
